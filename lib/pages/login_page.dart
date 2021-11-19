@@ -52,38 +52,39 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(
                     vertical: 16.0, horizontal: 32.0),
-                child: Column(children: [
-                  TextFormField(
-                    decoration: const InputDecoration(
-                        hintText: "Enter Username", labelText: "Username"),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Username cannot be empty";
-                      } else {
-                        return null;
-                      }
-                    },
-                    onChanged: (value) {
-                      name = value;
-                      setState(() {});
-                    },
-                  ),
-                  TextFormField(
-                    obscureText: true,
-                    decoration: const InputDecoration(
-                        hintText: "Enter Password", labelText: "Password"),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Password cannot be empty";
-                      } else if (value.length < 6) {
-                        return "Password length should be atleast 6";
-                      } else {
-                        return null;
-                      }
-                    },
-                  ),
-                  const SizedBox(height: 40.0),
-                  Material(
+                child: Column(
+                  children: [
+                    TextFormField(
+                      decoration: const InputDecoration(
+                          hintText: "Enter Username", labelText: "Username"),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Username cannot be empty";
+                        } else {
+                          return null;
+                        }
+                      },
+                      onChanged: (value) {
+                        name = value;
+                        setState(() {});
+                      },
+                    ),
+                    TextFormField(
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                          hintText: "Enter Password", labelText: "Password"),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Password cannot be empty";
+                        } else if (value.length < 6) {
+                          return "Password length should be atleast 6";
+                        } else {
+                          return null;
+                        }
+                      },
+                    ),
+                    const SizedBox(height: 40.0),
+                    Material(
                       color: Colors.deepPurple,
                       borderRadius:
                           BorderRadius.circular(changeButton ? 50 : 8),
@@ -107,8 +108,10 @@ class _LoginPageState extends State<LoginPage> {
                                       fontSize: 18),
                                 ),
                         ),
-                      )),
-                ]),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
