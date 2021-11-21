@@ -29,7 +29,10 @@ class MyTheme {
           color: Colors.black,
           elevation: 0.0,
           iconTheme: const IconThemeData(color: Colors.white),
-          textTheme: Theme.of(context).textTheme,
+          toolbarTextStyle: TextStyle(color: Colors.white),
+          textTheme: Theme.of(context).textTheme.copyWith(
+              headline6:
+                  context.textTheme.headline6!.copyWith(color: Colors.white)),
         ),
       );
 
