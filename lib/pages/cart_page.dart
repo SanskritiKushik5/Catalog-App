@@ -1,3 +1,4 @@
+import 'package:catalog_app/core/store.dart';
 import 'package:catalog_app/models/cart.dart';
 import 'package:catalog_app/widgets/themes.dart';
 import 'package:flutter/cupertino.dart';
@@ -61,10 +62,10 @@ class _CartTotal extends StatelessWidget {
 }
 
 class CartList extends StatelessWidget {
-  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-    return _cart.items.isEmpty
+    final CartModel? _cart = (VxState.store as MyStore).cart;
+    return _cart!.items.isEmpty
         ? "Nothing to show".text.xl3.makeCentered()
         : ListView.builder(
             itemCount: _cart.items.length,
